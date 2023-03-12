@@ -1,4 +1,4 @@
-**Tic-Tac-Toe Application**
+<h1 align="center"><span style="font-size:48px; font-weight:bold;">Tic-Tac-Toe Application</span></h1>
 
 This is a simple Tic-Tac-Toe game application built using Java. The game can be played between two players on a 3x3 board.
 
