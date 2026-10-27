@@ -1,36 +1,71 @@
-<h1 align="center"><span style="font-size:48px; font-weight:bold;">Tic-Tac-Toe Application</span></h1>
+# Tic-Tac-Toe Android App
 
-This is a simple Tic-Tac-Toe game application built using Java. The game can be played between two players on a 3x3 board.
+A two-player Tic-Tac-Toe game built as a native Android application with Java and XML layouts. Players enter their names, take turns on a 3×3 board, and see the match result in the app.
 
----
+> [!NOTE]
+> This is an Android project, not a command-line Java program. It requires the Android SDK and must be built with Gradle or Android Studio.
 
-**Installation**
-To install and run the application, you'll need to have jdk installed on your machine. You can download the latest version of java from the official website <a href="https://www.java.com/en/download/">here</a>.
+## Project status
 
-Once you have java is installed, you can clone the repository to your local machine using the following command:
+- **Platform:** Android
+- **Language:** Java
+- **Minimum Android version:** API 21 (Android 5.0)
+- **Compile and target SDK:** API 32
+- **Build system:** Gradle 7.2 with Android Gradle Plugin 7.1.1
+- **Recommended JDK:** 11
 
-git clone https://github.com/Mohd-Farhan/tic-tac-toe.git
-Then, navigate to the project directory and run the main.java file to start the game:
+## Prerequisites
 
-cd tic-tac-toe
-main.java
+Install one of the following:
 
----
+1. Android Studio with Android SDK Platform 32 and Build Tools installed; or
+2. JDK 11 plus the Android command-line tools, with `ANDROID_HOME` or `ANDROID_SDK_ROOT` pointing to the SDK.
 
-**Usage**
-To play the game, simply run the main.java file and follow the prompts on the command line. The game will ask you to enter the names of the two players, and then you can take turns entering the position where you want to place your X or O on the board. The game will continue until one player wins or the board is full.
+The checked-in Gradle wrapper downloads the required Gradle distribution automatically.
 
----
+## Setup
 
-**License**
-This project is licensed under the "Apache License" License.
+```bash
+git clone https://github.com/Arshad9999/TicTacToe.git
+cd TicTacToe
+chmod +x gradlew
+```
 
----
+Open the directory in Android Studio and allow Gradle synchronization to finish. Select an emulator or connected Android device and run the `app` configuration.
 
-**Contributing**
-If you find any issues or have suggestions for improving the application, please feel free to create a pull request or open an issue in the repository.
+## Command-line validation
 
----
+With Android SDK Platform 32 available:
 
-**Credits**
-This application was built by **Mohd-Farhan**.
+```bash
+./gradlew testDebugUnitTest
+./gradlew assembleDebug
+```
+
+The debug APK is generated under `app/build/outputs/apk/debug/`.
+
+Instrumented tests require a running emulator or connected device:
+
+```bash
+./gradlew connectedDebugAndroidTest
+```
+
+GitHub Actions runs the local unit-test task and assembles the debug APK for every pull request and push to the default branch.
+
+## Project structure
+
+```text
+app/src/main/java/       Activities and game behavior
+app/src/main/res/layout/ Android XML layouts
+app/src/main/res/drawable/ Game images and visual assets
+app/src/test/            Local JVM unit tests
+app/src/androidTest/     Device or emulator tests
+```
+
+## Fork and contribution provenance
+
+This repository is a fork of [Mohd-Farhan/TicTacToe](https://github.com/Mohd-Farhan/TicTacToe). See [FORK_NOTES.md](FORK_NOTES.md) for the audited attribution and contribution notes. Upstream authors retain credit for their work; do not present the full project as independently authored.
+
+## License
+
+The project retains its existing [Apache License 2.0](LICENSE.md). Preserve upstream copyright and attribution notices when redistributing it.
